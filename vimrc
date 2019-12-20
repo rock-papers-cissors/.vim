@@ -40,7 +40,7 @@ set softtabstop=4
 " === Status/command bar
 " ===
 set laststatus=2
-set autochdir
+" set autochdir
 set showcmd
 
 " Show command autocomplete
@@ -117,6 +117,7 @@ map <LEADER>j <C-w>j
 map <LEADER>h <C-w>h
 map <LEADER>k <C-w>k
 map <LEADER>l <C-w>l
+map <LEADER>r <C-w>r
 
 " Disabling the default s key
 noremap s <nop>
@@ -234,11 +235,15 @@ let NERDTreeMinimalUI=1
 let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let OmniCpp_defaultNamespaces=["_GLIBCXX_STD"]
 set tags+=/usr/include/c++/5/stdcpp.tags
 
 
+" ===
+" === ctags
+" ===
+" set tags=tags,./tags
 
 " set vim config right now
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
