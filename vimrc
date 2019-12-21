@@ -160,7 +160,7 @@ map tmp :-tabmove<CR>
 " === Other useful stuff
 " ===
 " Press space twice to jump to the next '<++>' and edit it
-map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>:c4i
+map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " 配色方案
 set background=dark
@@ -169,9 +169,9 @@ set background=dark
 "colorscheme pablo
 "colorscheme ron
 "colorscheme delek
-colorscheme desert 
+"colorscheme desert 
 "colorscheme solarized
-"colorscheme molokai
+colorscheme molokai
 "colorscheme evening 
 " colorscheme evening 
 "colorscheme evening 
@@ -188,7 +188,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
-Plugin 'Lokaltog/vim-powerline'
+"Plugin 'Lokaltog/vim-powerline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'derekwyatt/vim-fswitch'
@@ -204,10 +204,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'SirVer/ultisnips'
 Plugin 'keelii/vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-protodef'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'fholgado/minibufexpl.vim'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -215,6 +215,8 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'lilydjwg/fcitx.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'terryma/vim-expand-region'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " 插件列表结束
 call vundle#end()
 
@@ -247,3 +249,16 @@ set tags+=/usr/include/c++/5/stdcpp.tags
 
 " set vim config right now
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" ===
+" === Tagbar
+" ===
+nmap <F8> :TagbarToggle<CR>
+
+" ===
+" === Instand-markdown
+" ===
+let g:instant_markdown_browser = "firefox --new-window"
+"let g:instant_markdown_port = 8888
+let g:instant_markdown_autostart = 0
+
