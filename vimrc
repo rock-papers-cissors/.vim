@@ -162,25 +162,6 @@ map tmp :-tabmove<CR>
 " Press space twice to jump to the next '<++>' and edit it
 map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
-" 配色方案
-set background=dark
-"colorscheme phd
-"colorscheme evening 
-"colorscheme pablo
-"colorscheme ron
-"colorscheme delek
-"colorscheme desert 
-"colorscheme solarized
-colorscheme molokai
-"colorscheme evening 
-" colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-
 set rtp+=~/.vim/bundle/Vundle.vim
 " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
 call vundle#begin()
@@ -204,7 +185,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'SirVer/ultisnips'
 Plugin 'keelii/vim-snippets'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-protodef'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'fholgado/minibufexpl.vim'
@@ -219,6 +200,26 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " 插件列表结束
 call vundle#end()
+
+" 配色方案
+set background=dark
+"colorscheme phd
+"colorscheme evening 
+"colorscheme pablo
+"colorscheme ron
+"colorscheme delek
+"colorscheme desert 
+"colorscheme solarized
+colorscheme molokai
+"colorscheme evening 
+" colorscheme evening 
+"colorscheme evening 
+"colorscheme evening 
+"colorscheme evening 
+"colorscheme evening 
+"colorscheme evening 
+"colorscheme evening 
+
 
 " ===
 " === NERDTree
@@ -246,6 +247,7 @@ set tags+=/usr/include/c++/5/stdcpp.tags
 " === ctags
 " ===
 " set tags=tags,./tags
+set tags+=/home/ytqiang/anaconda3/envs/Detectron2/lib/python3.6/site-packages/tags
 
 " set vim config right now
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -259,6 +261,10 @@ nmap <F8> :TagbarToggle<CR>
 " === Instand-markdown
 " ===
 let g:instant_markdown_browser = "firefox --new-window"
-"let g:instant_markdown_port = 8888
+let g:instant_markdown_port = 8888
 let g:instant_markdown_autostart = 0
 
+" ===
+" === nerdcommenter
+" ===
+let g:NERDCommenterComment="<C-e>"
