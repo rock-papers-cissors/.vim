@@ -1,10 +1,10 @@
-" 
-" __     ___                    
-" \ \   / (_)_ __ ___  _ __ ___ 
+"
+" __     ___
+" \ \   / (_)_ __ ___  _ __ ___
 "  \ \ / /| | '_ ` _ \| '__/ __|
-"   \ V / | | | | | | | | | (__ 
+"   \ V / | | | | | | | | | (__
 "    \_/  |_|_| |_| |_|_|  \___|
-"                               
+"
 "
 set nocompatible
 filetype on
@@ -32,7 +32,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=2
 " set list
-" set listchars=tab:\ trainl:\ 
+" set listchars=tab:\ trainl:\
 set scrolloff=5
 set softtabstop=4
 
@@ -137,14 +137,14 @@ map <LEADER><Right> :vertical resize+5<CR>
 
 " Place the two screens up and down
 noremap sh <C-w>t<C-w>K
-" Place the two screns side by side 
+" Place the two screns side by side
 noremap sv <C-w>t<C-w>H
 
-" Rotate screens 
+" Rotate screens
 noremap srh <C-w>b<C-w>K
 noremap srv <C-w>t<C-w>H
 
-" === 
+" ===
 " === Tab management
 " ===
 " Create a new tab with tu
@@ -163,6 +163,7 @@ map tmp :-tabmove<CR>
 map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/after/
 " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -192,7 +193,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'suan/vim-instant-markdown'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'lilydjwg/fcitx.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'terryma/vim-expand-region'
@@ -202,24 +203,28 @@ Plugin 'dense-analysis/ale'
 " 插件列表结束
 call vundle#end()
 
+call plug#begin('~/.vim/plugged')
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+call plug#end()
+
 " 配色方案
 set background=dark
 "colorscheme phd
-"colorscheme evening 
+"colorscheme evening
 "colorscheme pablo
 "colorscheme ron
 "colorscheme delek
-"colorscheme desert 
+"colorscheme desert
 "colorscheme solarized
 colorscheme molokai
-"colorscheme evening 
-" colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
-"colorscheme evening 
+"colorscheme evening
+" colorscheme evening
+"colorscheme evening
+"colorscheme evening
+"colorscheme evening
+"colorscheme evening
+"colorscheme evening
+"colorscheme evening
 
 
 " ===
@@ -233,6 +238,8 @@ let NERDTreeWinSize=32
 let NERDTreeWinPos="right"
 " minal NERDUI
 let NERDTreeMinimalUI=1
+" show line number
+let NERDTreeShowLineNumbers = 1
 
 
 " reset ultiSnips hotkey to avoid contradict with YCM
@@ -293,3 +300,9 @@ nmap sn <Plug>(ale_next_wrap)
 nmap <Leader>s :ALEToggle<CR>
 "<Leader>d查看错误或警告的详细信息
 nmap <Leader>d :ALEDetail<CR>
+set backspace=indent,eol,start
+
+" ===
+" === Markdown-Preview
+" ===
+nmap <silent> <Leader>m <Plug>MarkdownPreview
