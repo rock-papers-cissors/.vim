@@ -21,6 +21,7 @@ S - save
 Ctrl-a - 全選
 ;rc - 編輯vimrc文件
 Y - 複製到系統緩存
+P - 粘貼系統緩存
 J,K,W,B - 快速移動光標
 ###### 窗口分割
 su, sd, sr, sl - 分割窗口
