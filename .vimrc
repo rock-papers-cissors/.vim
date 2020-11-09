@@ -77,6 +77,7 @@ map <LEADER>rc :e ~/.vim/vimrc<CR>
 
 "Copy to system clipboard
 vnoremap Y :w !xclip -i -sel c<CR>
+vnoremap P "+P
 
 "search
 map <LEADER><CR> :nohlsearch<CR>
@@ -189,7 +190,7 @@ Plugin 'keelii/vim-snippets'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-protodef'
 Plugin 'scrooloose/nerdtree'
-Plugin 'fholgado/minibufexpl.vim'
+" Plugin 'fholgado/minibufexpl.vim'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
